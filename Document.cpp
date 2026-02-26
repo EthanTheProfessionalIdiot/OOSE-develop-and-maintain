@@ -62,7 +62,4 @@ void Document::setPageCount(int pageCount)
     this->pageCount = pageCount;
 }
 
-void Document::setPageCount(int pageCount) {
-	this->pageCount = pageCount;
-}
 
