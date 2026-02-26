@@ -12,12 +12,10 @@ private:
     std::string status;
 
 public:
-    Bank() = default;
-
-    void AddUser(User user);
+    Bank();                     // Constructor declaration
+    void AddUser(User user);    // Function declaration
 };
 
-#endif
 #endif
 
 
