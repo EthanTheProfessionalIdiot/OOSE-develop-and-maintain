@@ -17,7 +17,7 @@ protected:
 };
 
 // ----------------------------
-// Stub Tests
+// Tests
 // ----------------------------
 
 TEST_F(StatementTest, DefaultContentIsEmpty)
@@ -46,8 +46,10 @@ TEST_F(StatementTest, GenerateWithZeroClearsContent)
 
 TEST_F(StatementTest, SetAndGetDestinationDoesNotThrow)
 {
-    Account account;   // Stub usage
-    stmt.setDestination(account);
+    Account account;   // Stub Account
+    stmt.setDestination(&account);  // Pass pointer
 
-    EXPECT_NO_THROW(stmt.getDestination());
+    // Check that getDestination() returns the same pointer
+    Account* dest = stmt.getDestination();
+    EXPECT_EQ(dest, &account);
 }
