@@ -10,8 +10,8 @@ class Statement;  // ✅ Forward declaration
 class Account {
 
 private:
-	string accountId;
-	string password;
+	std::string accountId;
+	std::string password;
 	std::vector<Statement> statements;
 
 public:
@@ -21,5 +21,6 @@ public:
 };
 
 #endif
+
 
 
