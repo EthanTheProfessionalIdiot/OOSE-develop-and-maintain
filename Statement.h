@@ -1,24 +1,30 @@
 #ifndef STATEMENT_H
 #define STATEMENT_H
 
+#include <string>
+using std::string;
+
+#include "Account.h"
+#include "Date.h"
+
 class Statement {
 
 private:
-	string statementId;
-	string content;
-	Account destination;
-	Date dateSent;
+    string statementId;
+    string content;
+    Account destination;
+    Date dateSent;
 
 public:
-	void generate(int string_content);
+    Statement();  // constructor
 
-	string getContent();
+    void generate(int contentLength);
 
-	void setContent(string content);
+    string getContent();
+    void setContent(string content);
 
-	Account getDestination();
-
-	void setDestination(Account destination);
+    Account getDestination();
+    void setDestination(Account destination);
 };
 
 #endif
