@@ -8,15 +8,14 @@
 //}
 
 void Bank::AddUser(User user) {
-	// TODO - implement Bank::AddUser
-	users.add(user);
-	throw "Not yet implemented";
+    users.push_back(user);
 }
 
 void Bank::getUsers() {
 	// TODO - implement Bank::getUsers
 	throw "Not yet implemented";
 }
+
 
 
 
