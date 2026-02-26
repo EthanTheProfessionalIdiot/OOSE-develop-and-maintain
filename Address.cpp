@@ -29,5 +29,8 @@ string Address::getZipCode() {
 }
 
 void Address::setZipCode(string zipCode) {
-	this->zipCode = zipCode;
+	if(zipcode.length <= 5){	
+		this->zipCode = zipCode;
+	}
 }
+
