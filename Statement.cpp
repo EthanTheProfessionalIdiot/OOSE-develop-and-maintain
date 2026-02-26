@@ -5,7 +5,8 @@
 
 Statement::Statement()
 {
-    // leave empty
+    destination = nullptr;
+    dateSent = nullptr;
 }
 
 void Statement::generate(int contentLength)
@@ -42,6 +43,7 @@ void Statement::setDestination(Account destination)
 {
     this->destination = destination;
 }
+
 
 
 
