@@ -2,10 +2,19 @@
 #define BANK_H
 #include "Role.h"
 
+#include <string>
+#include <vector>
+
+using std::string;
+using std::vector;
+
+class Role;   // forward declare if needed
+class User;   // forward declare
+
 class Bank : Role {
 
 private:
-	string bankId;
+	std::string bankId;
 	string bankName;
 	string status;
 
@@ -18,4 +27,5 @@ public:
 };
 
 #endif
+
 
