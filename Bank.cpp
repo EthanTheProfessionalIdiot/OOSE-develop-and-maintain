@@ -2,10 +2,10 @@
 #include "User.h"
 #include "Role.h"   // if Role exists
 
-Bank::Bank() {
+//Bank::Bank() {
 	// TODO - implement Bank::Bank
-	throw "Not yet implemented";
-}
+	//throw "Not yet implemented";
+//}
 
 void Bank::AddUser(User user) {
 	// TODO - implement Bank::AddUser
@@ -17,6 +17,7 @@ void Bank::getUsers() {
 	// TODO - implement Bank::getUsers
 	throw "Not yet implemented";
 }
+
 
 
 
