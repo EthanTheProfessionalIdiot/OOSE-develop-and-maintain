@@ -11,10 +11,10 @@ void Bank::AddUser(User user) {
     users.push_back(user);
 }
 
-void Bank::getUsers() {
-	// TODO - implement Bank::getUsers
-	throw "Not yet implemented";
+std::vector<User> Bank::getUsers() {
+    return users;
 }
+
 
 
 
