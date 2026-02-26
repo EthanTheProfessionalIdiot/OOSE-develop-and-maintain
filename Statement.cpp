@@ -1,22 +1,47 @@
 #include "Statement.h"
+#include <sstream>
 
-void Statement::generate(int string_content) {
-	// TODO - implement Statement::generate
-	throw "Not yet implemented";
+Statement::Statement()
+{
+    this->statementId = "";
+    this->content = "";
 }
 
-string Statement::getContent() {
-	return this->content;
+void Statement::generate(int contentLength)
+{
+    // Simple stub logic:
+    // Generate fake content based on length
+
+    if (contentLength <= 0)
+    {
+        content = "";
+        return;
+    }
+
+    content = string(contentLength, 'X');
+
+    // Auto-generate statement ID
+    std::stringstream ss;
+    ss << "STMT-" << contentLength;
+    statementId = ss.str();
 }
 
-void Statement::setContent(string content) {
-	this->content = content;
+string Statement::getContent()
+{
+    return this->content;
 }
 
-Account Statement::getDestination() {
-	return this->destination;
+void Statement::setContent(string content)
+{
+    this->content = content;
 }
 
-void Statement::setDestination(Account destination) {
-	this->destination = destination;
+Account Statement::getDestination()
+{
+    return this->destination;
+}
+
+void Statement::setDestination(Account destination)
+{
+    this->destination = destination;
 }
