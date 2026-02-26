@@ -1,23 +1,23 @@
 #ifndef USER_H
 #define USER_H
 
-class User {
+#include <string>
+#include <vector>
+#include "Account.h"
+#include "Address.h"
 
+class User {
 private:
-	string userId;
-	string name;
-	string status;
-	std::vector<Account> accounts;
-	std::vector<Address> address;
+    std::string userId;
+    std::string name;
+    std::string status;
+    std::vector<Account> accounts;
+    std::vector<Address> address;
 
 public:
-	void ReceiveStatement();
-
-	void UpdateEmail();
-
-	void logIn();
-
-	void logOut();
+    User() = default;
+    User(std::string name, std::string id)
+        : name(name), userId(id) {}
 };
 
 #endif
