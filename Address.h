@@ -1,30 +1,31 @@
 #ifndef ADDRESS_H
 #define ADDRESS_H
 
-class Address {
+#include <string>   // Needed for std::string
 
+class Address {
 private:
-	string city;
-	string state;
-	string street;
-	string zipCode;
+    std::string city;
+    std::string state;
+    std::string street;
+    std::string zipCode;
 
 public:
-	string getCity();
+    // Constructor
+    Address();
 
-	void setCity(string city);
+    // Getters
+    std::string getCity();
+    std::string getState();
+    std::string getStreet();
+    std::string getZipCode();
 
-	string getState();
-
-	void setState(string state);
-
-	string getStreet();
-
-	void setStreet(string street);
-
-	string getZipCode();
-
-	void setZipCode(string zipCode);
+    // Setters
+    void setCity(const std::string& city);
+    void setState(const std::string& state);
+    void setStreet(const std::string& street);
+    void setZipCode(const std::string& zipCode);
 };
 
 #endif
+
