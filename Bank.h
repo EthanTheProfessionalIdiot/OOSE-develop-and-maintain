@@ -1,5 +1,6 @@
 #ifndef BANK_H
 #define BANK_H
+#include "Role.h"
 
 class Bank : Role {
 
@@ -17,3 +18,4 @@ public:
 };
 
 #endif
+
