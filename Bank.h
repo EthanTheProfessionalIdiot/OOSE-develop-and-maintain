@@ -1,33 +1,25 @@
 #ifndef BANK_H
 #define BANK_H
+
+#include <string>
 #include "Role.h"
 #include "User.h"
 
-#include <string>
-#include <vector>
-
-using std::string;
-using std::vector;
-
-class Role;   // forward declare if needed
-class User;   // forward declare
-
-class Bank : Role {
-
+class Bank : public Role {
 private:
-	std::string bankId;
-	string bankName;
-	string status;
+    std::string bankId;
+    std::string bankName;
+    std::string status;
 
 public:
-	Bank();
+    Bank() = default;
 
-	void AddUser();
-
-	void getUsers();
+    void AddUser(User user);
 };
 
 #endif
+#endif
+
 
 
 
