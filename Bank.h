@@ -1,6 +1,7 @@
 #ifndef BANK_H
 #define BANK_H
 #include "Role.h"
+#include "User.h"
 
 #include <string>
 #include <vector>
@@ -27,5 +28,6 @@ public:
 };
 
 #endif
+
 
 
