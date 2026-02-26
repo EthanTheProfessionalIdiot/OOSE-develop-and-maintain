@@ -18,6 +18,9 @@ public:
     User() = default;
     User(std::string name, std::string id)
         : name(name), userId(id) {}
+    std::string getName() const { return name; }   // ✅ add this
+    std::string getId() const { return id; }       // optional
 };
 
 #endif
+
