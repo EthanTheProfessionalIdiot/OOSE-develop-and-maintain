@@ -36,14 +36,15 @@ void Statement::setContent(std::string content)
     this->content = content;
 }
 
-Account* Statement::getDestination()
+Account Statement::getDestination()
 {
     return destination;
 }
 
-void Statement::setDestination(Account* destination)
+void Statement::setDestination(Account destination)
 {
     this->destination = destination;
 }
+
 
 
