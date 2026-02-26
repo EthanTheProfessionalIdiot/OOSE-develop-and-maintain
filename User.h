@@ -8,7 +8,7 @@
 
 class User {
 private:
-    std::string userId;
+    std::string userId;          // note: renamed to match member
     std::string name;
     std::string status;
     std::vector<Account> accounts;
@@ -16,10 +16,17 @@ private:
 
 public:
     User() = default;
-    User(std::string name, std::string id)
-        : name(name), userId(id) {}
-    std::string getName() const { return name; }   // ✅ add this
-    std::string getId() const { return id; }       // optional
+
+    User(const std::string& name_, const std::string& id_)
+        : name(name_), userId(id_) {}
+
+    // Accessors
+    std::string getName() const { return name; }
+    std::string getId() const { return userId; }   // ✅ fixed
+
+    // Optionally: setters
+    void setName(const std::string& name_) { name = name_; }
+    void setId(const std::string& id_) { userId = id_; }
 };
 
 #endif
