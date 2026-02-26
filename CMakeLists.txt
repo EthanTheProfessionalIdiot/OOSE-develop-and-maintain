@@ -4,26 +4,36 @@ project(DocIncProject)
 set(CMAKE_CXX_STANDARD 17)
 
 # -------------------------
-# Main Source Files
+# 1️⃣ Main Library (PUT IT HERE — near the top)
 # -------------------------
 
 add_library(DocIncLib
     Statement.cpp
     Document.cpp
     Bank.cpp
+    Account.cpp
+    Date.cpp
 )
 
 # -------------------------
-# GoogleTest
+# 2️⃣ Enable Testing
 # -------------------------
 
 enable_testing()
 find_package(GTest REQUIRED)
 
+# -------------------------
+# 3️⃣ Test Executable (NOTICE folder is 'test' not 'tests')
+# -------------------------
+
 add_executable(runTests
-    tests/Statement_Test.cpp
-    tests/Bank_Test.cpp
+    test/Statement_Test.cpp
+    test/Bank_Test.cpp
 )
+
+# -------------------------
+# 4️⃣ Link Everything
+# -------------------------
 
 target_link_libraries(runTests
     DocIncLib
