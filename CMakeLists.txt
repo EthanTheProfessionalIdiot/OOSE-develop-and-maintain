@@ -4,16 +4,14 @@ project(DocIncProject)
 set(CMAKE_CXX_STANDARD 17)
 
 # -------------------------
-# Source Files
+# Main Source Files
 # -------------------------
 
-set(SOURCES
-    src/Statement.cpp
-    src/Document.cpp
-    src/Bank.cpp
+add_library(DocIncLib
+    Statement.cpp
+    Document.cpp
+    Bank.cpp
 )
-
-add_library(DocIncLib ${SOURCES})
 
 # -------------------------
 # GoogleTest
@@ -22,12 +20,10 @@ add_library(DocIncLib ${SOURCES})
 enable_testing()
 find_package(GTest REQUIRED)
 
-set(TEST_SOURCES
+add_executable(runTests
     tests/Statement_Test.cpp
     tests/Bank_Test.cpp
 )
-
-add_executable(runTests ${TEST_SOURCES})
 
 target_link_libraries(runTests
     DocIncLib
