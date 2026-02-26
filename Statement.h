@@ -4,27 +4,27 @@
 #include <string>
 using std::string;
 
-#include "Account.h"
-#include "Date.h"
+class Account;  // ✅ Forward declaration
+class Date;     // ✅ Forward declaration
 
 class Statement {
 
 private:
     string statementId;
     string content;
-    Account destination;
-    Date dateSent;
+    Account* destination;  // ⚠️ pointer avoids incomplete type issue
+    Date* dateSent;        // pointer for same reason
 
 public:
-    Statement();  // constructor
+    Statement();
 
     void generate(int contentLength);
 
     string getContent();
     void setContent(string content);
 
-    Account getDestination();
-    void setDestination(Account destination);
+    Account* getDestination();
+    void setDestination(Account* destination);
 };
 
 #endif
