@@ -13,6 +13,7 @@ private:
     Date dateSent;
 
 public:
+    Statement();   // ADD THIS
     void generate(int string_content);
     std::string getContent();
     void setContent(std::string content);
@@ -21,3 +22,4 @@ public:
 };
 
 #endif
+
