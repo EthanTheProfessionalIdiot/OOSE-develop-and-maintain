@@ -4,6 +4,9 @@
 #include <vector>      // ✅ ADD THIS
 #include "Statement.h" // if you use Statement
 #include <string>      // if you use string
+
+class Statement;  // ✅ Forward declaration
+
 class Account {
 
 private:
@@ -18,4 +21,5 @@ public:
 };
 
 #endif
+
 
