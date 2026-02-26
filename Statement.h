@@ -1,31 +1,37 @@
 #ifndef STATEMENT_H
 #define STATEMENT_H
 
-#include <string>
-#include "Account.h"
-#include "Date.h"
+#include <string>   // for std::string
 
-class Account;  // forward declaration
-class Date;     // forward declaration
-
+// Forward declarations to avoid circular includes
+class Account;
+class Date;
 
 class Statement {
 private:
-    std::string statementId;
     std::string content;
-    Account* destination;   // pointer
-    Date* dateSent;         // pointer
+    Account* destination;   // pointer to Account
+    Date* dateSent;         // pointer to Date
 
 public:
-    Statement();   // ADD THIS
-    void generate(int string_content);
+    // Constructor
+    Statement();
+
+    // Getters and setters for content
     std::string getContent();
-    void setContent(std::string content);
+    void setContent(const std::string& content);
+
+    // Getters and setters for destination
     Account* getDestination();
     void setDestination(Account* destination);
+
+    // Getters and setters for dateSent
+    Date* getDateSent();
+    void setDateSent(Date* date);
 };
 
 #endif
+
 
 
 
