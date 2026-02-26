@@ -1,36 +1,16 @@
 #include "Address.h"
 
-string Address::getCity() {
-	return this->city;
-}
+// Constructor
+Address::Address() : city(""), state(""), street(""), zipCode("") {}
 
-void Address::setCity(string city) {
-	this->city = city;
-}
+// Getters
+std::string Address::getCity() { return city; }
+std::string Address::getState() { return state; }
+std::string Address::getStreet() { return street; }
+std::string Address::getZipCode() { return zipCode; }
 
-string Address::getState() {
-	return this->state;
-}
-
-void Address::setState(string state) {
-	this->state = state;
-}
-
-string Address::getStreet() {
-	return this->street;
-}
-
-void Address::setStreet(string street) {
-	this->street = street;
-}
-
-string Address::getZipCode() {
-	return this->zipCode;
-}
-
-void Address::setZipCode(string zipCode) {
-	if(zipcode.length <= 5){	
-		this->zipCode = zipCode;
-	}
-}
-
+// Setters
+void Address::setCity(const std::string& c) { city = c; }
+void Address::setState(const std::string& s) { state = s; }
+void Address::setStreet(const std::string& s) { street = s; }
+void Address::setZipCode(const std::string& z) { zipCode = z; }
