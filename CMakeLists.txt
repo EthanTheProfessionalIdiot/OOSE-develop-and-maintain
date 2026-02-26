@@ -4,7 +4,7 @@ project(DocIncProject)
 set(CMAKE_CXX_STANDARD 17)
 
 # -------------------------
-# 1️⃣ Main Library (PUT IT HERE — near the top)
+# 1️⃣ Main Library (PUT IT HERE — near the top) 
 # -------------------------
 
 add_library(DocIncLib
