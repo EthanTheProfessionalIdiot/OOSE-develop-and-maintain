@@ -2,9 +2,6 @@
 #include "Bank.h"
 #include "User.h"
 
-// ----------------------------
-// Test Fixture (Mock Style)
-// ----------------------------
 class BankTest : public ::testing::Test
 {
 protected:
@@ -16,13 +13,19 @@ protected:
     }
 };
 
-// ----------------------------
-// Tests
-// ----------------------------
-
-TEST_F(BankTest, AddUserThrowsNotImplemented)
+TEST_F(BankTest, AddUserIncreasesUserCount)
 {
     User user = CreateTestUser();
 
-    EXPECT_THROW(bank.AddUser(user), const char*);
+    bank.AddUser(user);
+
+    EXPECT_EQ(bank.GetUserCount(), 1);
+}
+
+TEST_F(BankTest, AddMultipleUsers)
+{
+    bank.AddUser(User("Ethan", "123"));
+    bank.AddUser(User("Alice", "456"));
+
+    EXPECT_EQ(bank.GetUserCount(), 2);
 }
