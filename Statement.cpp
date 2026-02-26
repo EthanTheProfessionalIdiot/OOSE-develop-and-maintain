@@ -9,6 +9,14 @@ Statement::Statement() {
     content = "";
 }
 
+void Statement::generate(int contentLength) {
+    if(contentLength <= 0) {
+        content = "";
+    } else {
+        content = std::string(contentLength, 'X');
+    }
+}
+
 // Content getters/setters
 std::string Statement::getContent() {
     return content;
@@ -35,6 +43,7 @@ Date* Statement::getDateSent() {
 void Statement::setDateSent(Date* date) {
     dateSent = date;
 }
+
 
 
 
