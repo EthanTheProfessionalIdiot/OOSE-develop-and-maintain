@@ -1,14 +1,18 @@
 #ifndef ROLE_H
 #define ROLE_H
 
-class Role : User {
+#include <vector>
+#include <string>
+#include "User.h"
 
+class Role : public User {
 private:
-	std::vector<User> users;
-	string adminStatus;
+    std::vector<User> users;
+    std::string adminStatus;
 
 public:
-	void getPermissions();
+    Role() = default;
 };
 
 #endif
+
