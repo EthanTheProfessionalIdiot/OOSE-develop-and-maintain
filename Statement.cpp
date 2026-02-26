@@ -19,19 +19,19 @@ void Statement::generate(int contentLength)
         return;
     }
 
-    content = string(contentLength, 'X');
+    content = std::string(contentLength, 'X');
 
     std::stringstream ss;
     ss << "STMT-" << contentLength;
     statementId = ss.str();
 }
 
-string Statement::getContent()
+std::string Statement::getContent()
 {
     return content;
 }
 
-void Statement::setContent(string content)
+void Statement::setContent(std::string content)
 {
     this->content = content;
 }
@@ -45,4 +45,5 @@ void Statement::setDestination(Account* destination)
 {
     this->destination = destination;
 }
+
 
