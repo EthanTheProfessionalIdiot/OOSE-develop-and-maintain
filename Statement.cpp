@@ -1,52 +1,41 @@
 #include "Statement.h"
-#include "Account.h"
+#include "Account.h"   // full definition needed for cpp
 #include "Date.h"
-#include <sstream>
 
-//Statement::Statement()
-//{
-    // leave empty
-//}
-Statement::Statement()
-{
+// Constructor
+Statement::Statement() {
     destination = nullptr;
     dateSent = nullptr;
+    content = "";
 }
 
-void Statement::generate(int contentLength)
-{
-    if (contentLength <= 0)
-    {
-        content = "";
-        return;
-    }
-
-    content = std::string(contentLength, 'X');
-
-    std::stringstream ss;
-    ss << "STMT-" << contentLength;
-    statementId = ss.str();
-}
-
-std::string Statement::getContent()
-{
+// Content getters/setters
+std::string Statement::getContent() {
     return content;
 }
 
-void Statement::setContent(std::string content)
-{
-    this->content = content;
+void Statement::setContent(const std::string& newContent) {
+    content = newContent;
 }
 
-Account Statement::getDestination()
-{
+// Destination getters/setters
+Account* Statement::getDestination() {
     return destination;
 }
 
-void Statement::setDestination(Account destination)
-{
-    this->destination = destination;
+void Statement::setDestination(Account* dest) {
+    destination = dest;
 }
+
+// Date getters/setters
+Date* Statement::getDateSent() {
+    return dateSent;
+}
+
+void Statement::setDateSent(Date* date) {
+    dateSent = date;
+}
+
 
 
 
