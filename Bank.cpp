@@ -7,13 +7,14 @@
 	//throw "Not yet implemented";
 //}
 
-void Bank::AddUser(User user) {
-    users.push_back(user);
-}
+// void Bank::AddUser(User user) {
+//     users.push_back(user);
+// }
 
-std::vector<User> Bank::getUsers() {
-    return users;
-}
+// std::vector<User> Bank::getUsers() {
+//     return users;
+// }
+
 
 
 
