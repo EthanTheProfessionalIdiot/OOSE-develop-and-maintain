@@ -14,9 +14,11 @@ private:
 public:
     Bank() = default;                    // Constructor declaration
     void AddUser(User user);    // Function declaration
+    std::vector<User> getUsers();
 };
 
 #endif
+
 
 
 
