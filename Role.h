@@ -7,12 +7,13 @@
 
 class Role : public User {
 private:
-    std::vector<User> users;
     std::string adminStatus;
-
+protected:
+    std::vector<User> users;
 public:
     Role() = default;
 };
 
 #endif
+
 
