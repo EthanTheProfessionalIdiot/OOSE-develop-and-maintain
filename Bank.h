@@ -2,6 +2,7 @@
 #define BANK_H
 
 #include <string>
+#include <vector>
 #include "Role.h"
 #include "User.h"
 
@@ -12,9 +13,16 @@ private:
     std::string status;
 
 public:
-    Bank() = default;                    // Constructor declaration
-    void AddUser(User user);    // Function declaration
-    std::vector<User> getUsers();
+    Bank() = default;                    
+
+    // Add user to inherited 'users' vector
+    void AddUser(const User& user) { users.push_back(user); }
+
+    // Access all users
+    std::vector<User> getUsers() { return users; }
+
+    // Add this so tests compile
+    size_t GetUserCount() const { return users.size(); }
 };
 
 #endif
