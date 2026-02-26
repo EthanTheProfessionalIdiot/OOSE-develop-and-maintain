@@ -17,6 +17,8 @@ public:
     // Constructor
     Statement();
 
+    void generate(int contentLength); // fills content with 'X'
+
     // Getters and setters for content
     std::string getContent();
     void setContent(const std::string& content);
@@ -31,6 +33,7 @@ public:
 };
 
 #endif
+
 
 
 
