@@ -22,19 +22,16 @@ add_library(DocIncLib
 enable_testing()
 find_package(GTest REQUIRED)
 
-# -------------------------
-# 3️⃣ Test Executable (NOTICE folder is 'test' not 'tests')
-# -------------------------
-
+# 3️⃣ Test Executable
 add_executable(runTests
     test/Statement_Test.cpp
     test/Bank_Test.cpp
 )
 
-# -------------------------
-# 4️⃣ Link Everything
-# -------------------------
+# Add include directories for the test target
+target_include_directories(runTests PRIVATE ${CMAKE_SOURCE_DIR})
 
+# 4️⃣ Link Everything
 target_link_libraries(runTests
     DocIncLib
     GTest::GTest
