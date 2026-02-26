@@ -1,17 +1,18 @@
 #include "Statement.h"
+#include "Account.h"
+#include "Date.h"
 #include <sstream>
 
 Statement::Statement()
 {
-    this->statementId = "";
-    this->content = "";
+    statementId = "";
+    content = "";
+    destination = nullptr;
+    dateSent = nullptr;
 }
 
 void Statement::generate(int contentLength)
 {
-    // Simple stub logic:
-    // Generate fake content based on length
-
     if (contentLength <= 0)
     {
         content = "";
@@ -20,7 +21,6 @@ void Statement::generate(int contentLength)
 
     content = string(contentLength, 'X');
 
-    // Auto-generate statement ID
     std::stringstream ss;
     ss << "STMT-" << contentLength;
     statementId = ss.str();
@@ -28,7 +28,7 @@ void Statement::generate(int contentLength)
 
 string Statement::getContent()
 {
-    return this->content;
+    return content;
 }
 
 void Statement::setContent(string content)
@@ -36,12 +36,17 @@ void Statement::setContent(string content)
     this->content = content;
 }
 
-Account Statement::getDestination()
+Account* Statement::getDestination()
 {
-    return this->destination;
+    return destination;
 }
 
+void Statement::setDestination(Account* destination)
+{
+    this->destination = destination;
+}
 void Statement::setDestination(Account destination)
 {
     this->destination = destination;
 }
+
