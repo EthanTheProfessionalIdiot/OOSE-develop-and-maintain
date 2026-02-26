@@ -2,29 +2,22 @@
 #define STATEMENT_H
 
 #include <string>
-using std::string;
-
-class Account;  // ✅ Forward declaration
-class Date;     // ✅ Forward declaration
+#include "Account.h"
+#include "Date.h"
 
 class Statement {
-
 private:
-    string statementId;
-    string content;
-    Account* destination;  // ⚠️ pointer avoids incomplete type issue
-    Date* dateSent;        // pointer for same reason
+    std::string statementId;
+    std::string content;
+    Account destination;
+    Date dateSent;
 
 public:
-    Statement();
-
-    void generate(int contentLength);
-
-    string getContent();
-    void setContent(string content);
-
-    Account* getDestination();
-    void setDestination(Account* destination);
+    void generate(int string_content);
+    std::string getContent();
+    void setContent(std::string content);
+    Account getDestination();
+    void setDestination(Account destination);
 };
 
 #endif
