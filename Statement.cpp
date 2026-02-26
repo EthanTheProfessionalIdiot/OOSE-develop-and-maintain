@@ -45,8 +45,4 @@ void Statement::setDestination(Account* destination)
 {
     this->destination = destination;
 }
-void Statement::setDestination(Account destination)
-{
-    this->destination = destination;
-}
 
