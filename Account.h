@@ -1,6 +1,9 @@
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
 
+#include <vector>      // ✅ ADD THIS
+#include "Statement.h" // if you use Statement
+#include <string>      // if you use string
 class Account {
 
 private:
@@ -15,3 +18,4 @@ public:
 };
 
 #endif
+
